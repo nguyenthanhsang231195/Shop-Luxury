@@ -36,3 +36,6 @@ IV. ProductScreen
 2) npm install redux
 3) npm install react-redux
 4) npm install react-router
+
+V. CategoryScreen
+- Lưu ý Components Filter
