@@ -30,3 +30,9 @@ III. HomeScreen
 - Carousel
 - HeaderComponent (Lưu các component ở phần Header)
 - Lưu ý nhớ cài Route path="/"
+
+IV. ProductScreen
+* cd frontend ->
+2) npm install redux
+3) npm install react-redux
+4) npm install react-router

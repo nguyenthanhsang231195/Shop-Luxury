@@ -10,6 +10,8 @@ import VideoAdvertise from './Components/VideoLuxury/VideoAdvertise';
 
 // Screen
 import HomeScreen from './Screens/HomeScreen/HomeScreen';
+import ProductScreen from './Screens/ProductScreen/ProductScreen';
+
 function App() {
     return (
 <BrowserRouter>
@@ -24,6 +26,9 @@ function App() {
         <Route path="/" component={CarouselBanner} exact />
         <Route path="/" component={HomeScreen} exact />
         <Route path="/" component={VideoAdvertise} exact />
+
+        {/* Screens */}
+        <Route path="/product/:slug" component={ProductScreen} />
     </main>
 
     <footer className="footer-website">
