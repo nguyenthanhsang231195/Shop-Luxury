@@ -18,3 +18,15 @@ II. Github
 - git branch -M main
 - git remote add origin https://github.com/nguyenthanhsang231195/Shop-Luxury.git
 - git push -u origin main (sau này chỉ dùng git push)
+
+III. HomeScreen
+* cd frontend ->
+1) npm install react-router-dom
+2) npm install react-bootstrap@next bootstrap@5.1.1 (Dùng Carousel)
+3) Tạo folder Screens
+- HomeScreen.js
+- HomeScreen.css
+4) Tạo folder Components
+- Carousel
+- HeaderComponent (Lưu các component ở phần Header)
+- Lưu ý nhớ cài Route path="/"
