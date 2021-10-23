@@ -1,8 +1,9 @@
 .filter{
+    position: relative;
     background-color: gray;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    height: auto;
     padding-left: 1rem;
 }
 

@@ -39,3 +39,6 @@ IV. ProductScreen
 
 V. CategoryScreen
 - Lưu ý Components Filter
+- Update : Category -> cd frontend -> npm install react-paginate (Dùng để chuyển trang)
+(Chưa cần thiết vì không data lớn)
+- Update : ProductScreen

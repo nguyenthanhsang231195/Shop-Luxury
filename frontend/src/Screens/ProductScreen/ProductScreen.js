@@ -9,6 +9,8 @@ function ProductScreen(props) {
     const product = productData.getProductBySlug(props.match.params.slug);
     const [previewImg, setPreviewImg] = useState(product.image_main);
 
+    const [quantity, setQuantity] = useState(1);
+
     const addToCartHandler = () => {
         props.history.push(`/cart/`);
     };
@@ -96,7 +98,7 @@ function ProductScreen(props) {
 
             <li>
                 <label className="infor-product-color-size">
-                    <h2>  Size Bạn Chọn </h2>
+                    <h2>  Size Bạn Chọn: </h2>
                    
                     <select className="select-color-size">
                         {
@@ -108,13 +110,29 @@ function ProductScreen(props) {
                 </label>
             </li>
 
+            {product.countInStock > 0 && (
             <li>
+                <div className="product-cart">
+                    <h2> Số lượng: </h2>
+
+                    <select className="input-quantity"
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                        >
+                        {[...Array(product.countInStock).keys()].map((x) => 
+                            (<option key={x + 1} value={x + 1}> {x + 1} </option>)
+                        )}
+                    </select>
+                </div>
+
                 <div className="containerB row-xGrid-yMiddle">
                     <div className="row-xGrid iso-standard">
                         <button onClick={addToCartHandler} className="ctrl-standard typ-subhed fx-bubbleDown"> Mua sắm thỏa thích </button>
                     </div>
                 </div>
-            </li>     
+            </li>
+                )
+            }    
         </ul>
     </div>
 </div>
