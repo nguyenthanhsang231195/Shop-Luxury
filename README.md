@@ -68,3 +68,9 @@ VIII. Install ESlint (ESlint chuyên fix lỗi do nhiều lập trình viên có
 - Where does your code run? · browser, node (ấn space để chọn)
 - What format do you want your config file to be in? · JavaScript
 4) Chú ý: .env
+
+IX. Redux - store.js
+1) cd frontend -> npm install redux-thunk
+2) store.js
+3) Folder : Actions và Constants
+4) Lưu ý khi import thằng AI tabnine nó hay bị nhầm tên viết hoa và viết thường
