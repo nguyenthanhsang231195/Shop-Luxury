@@ -51,3 +51,8 @@ VI. NodeJs Server
 5) Thêm (JSON viewer) vào google chrome
 6) npm install --save-dev nodemon (Lưu lại data ở backend mà không phải reload)
 - npm start
+
+VII. Axios - Load Products from Backend
+1) cd frontend -> npm install axios
+2) Thêm 2 components: LoadingBox and MessageBox
+3) const {data} là không thể thay đổi
