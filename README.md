@@ -56,3 +56,15 @@ VII. Axios - Load Products from Backend
 1) cd frontend -> npm install axios
 2) Thêm 2 components: LoadingBox and MessageBox
 3) const {data} là không thể thay đổi
+
+VIII. Install ESlint (ESlint chuyên fix lỗi do nhiều lập trình viên có cách viết khác nhau viết code khác nhau)
+1) install VSCode eslint extension
+2) npm install -D eslint
+3) ./node_modules/.bin/eslint --init
+- How would you like to use ESLint? · problems
+- What type of modules does your project use? · esm
+- Which framework does your project use? · react
+- Does your project use TypeScript? · No
+- Where does your code run? · browser, node (ấn space để chọn)
+- What format do you want your config file to be in? · JavaScript
+4) Chú ý: .env
