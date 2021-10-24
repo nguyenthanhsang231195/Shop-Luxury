@@ -74,3 +74,8 @@ IX. Redux - store.js
 2) store.js
 3) Folder : Actions và Constants
 4) Lưu ý khi import thằng AI tabnine nó hay bị nhầm tên viết hoa và viết thường
+
+X. Add Redux to ProductScreen
+1) Lưu ý API /api/products/:slug không thể truy cập bằng cách thông thường. Lần đầu tiên có thể bị lỗi không hiển thị const product(cái này có thể do slug là tiếng việt có dấu gây ra vì Network XHR nó trả về lỗi)
+2) const [previewImg, setPreviewImg] = useState(); 
+- Nó không nhận product.image_main vì sao thì chưa tìm được

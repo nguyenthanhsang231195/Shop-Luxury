@@ -120,7 +120,7 @@ const products =
         categorySlug: 'vay-lien-than',
         countInStock: 16,
         image_main: '/images/Dress010.jpg',
-        image01: '/images/Dress010.jpg',
+        image01: '/images/Dress011.jpg',
         image02: '/images/Dress012.jpg',
         price: 241,
         pricesell: 268,

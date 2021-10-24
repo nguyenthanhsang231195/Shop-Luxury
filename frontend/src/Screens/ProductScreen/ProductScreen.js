@@ -1,21 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
-import productData from '../../data';
+import { detailsProduct } from '../../Actions/productActions';
+import LoadingBox from '../../Components/LoadingBox/LoadingBox';
+import MessageBox from '../../Components/MessageBox/MessageBox';
 import formatCurrency from '../../util';
 import './ProductScreen.css';
 
 function ProductScreen(props) {
 
-    const product = productData.getProductBySlug(props.match.params.slug);
-    const [previewImg, setPreviewImg] = useState(product.image_main);
+    const dispatch = useDispatch();
+    const productId = props.match.params.slug;
+    const productDetails = useSelector((state) => state.productDetails);
+    const { loading, error, product } = productDetails;
 
-    const [quantity, setQuantity] = useState(1);
+    useEffect(() => {
+        dispatch(detailsProduct(productId));
+    }, [dispatch, productId]);
 
     const addToCartHandler = () => {
         props.history.push(`/cart/`);
     };
 
+    const [previewImg, setPreviewImg] = useState();
+
+    const [quantity, setQuantity] = useState(1);
+
     return (
+<>
+{loading ? 
+    (<LoadingBox></LoadingBox>) : error ? 
+    (<MessageBox variant="danger"> {error} </MessageBox>) : (
 <div className="product-screen">
     {/* Image */}
     <div className="image-product">
@@ -136,6 +151,8 @@ function ProductScreen(props) {
         </ul>
     </div>
 </div>
+)}
+</>
     )
 }
 
