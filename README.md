@@ -79,3 +79,6 @@ X. Add Redux to ProductScreen
 1) Lưu ý API /api/products/:slug không thể truy cập bằng cách thông thường. Lần đầu tiên có thể bị lỗi không hiển thị const product(cái này có thể do slug là tiếng việt có dấu gây ra vì Network XHR nó trả về lỗi)
 2) const [previewImg, setPreviewImg] = useState(); 
 - Nó không nhận product.image_main vì sao thì chưa tìm được
+
+XI. CartScreen
+1) Không có gì đáng lưu ý ngoại trừ state color và size nó không vào cartScreen

@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar() {
+
+    const cart = useSelector((state) => state.cart);
+    const { cartItems } = cart;
+
     return (
 <div className="nav-header">
     <div className="navbar">
@@ -55,8 +60,11 @@ export default function Navbar() {
                 </Link>
             </li>
             <li>
-                <Link to="/giỏ-hàng" className="navbar-item">
-                    <i className="fas fa-cart-plus"></i> 
+                <Link to="/cart" className="navbar-item">
+                    <i className="fas fa-cart-plus"></i>
+                    {cartItems.length > 0 && (
+                        <span className="badge">{cartItems.length}</span>
+                    )}
                 </Link>
             </li>
         </ul>

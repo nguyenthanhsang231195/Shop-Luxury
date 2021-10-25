@@ -12,6 +12,7 @@ import VideoAdvertise from './Components/VideoLuxury/VideoAdvertise';
 import HomeScreen from './Screens/HomeScreen/HomeScreen';
 import ProductScreen from './Screens/ProductScreen/ProductScreen';
 import CategoryScreen from './Screens/CategoryScreen/CategoryScreen';
+import CartScreen from './Screens/CartScreen/CartScreen';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
         {/* Screens */}
         <Route path="/product/:slug" component={ProductScreen} />
         <Route path="/category" component={CategoryScreen} />
+        <Route path="/cart/:slug?" component={CartScreen} />
     </main>
 
     <footer className="footer-website">

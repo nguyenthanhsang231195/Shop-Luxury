@@ -14,16 +14,19 @@ function ProductScreen(props) {
     const productDetails = useSelector((state) => state.productDetails);
     const { loading, error, product } = productDetails;
 
+  
+
     useEffect(() => {
         dispatch(detailsProduct(productId));
     }, [dispatch, productId]);
 
     const addToCartHandler = () => {
-        props.history.push(`/cart/`);
-    };
+        props.history.push(`/cart/${productId}?số-lượng=${quantity}`);
+      };
 
     const [previewImg, setPreviewImg] = useState();
-
+    const [color, setColor] = useState(undefined);
+    const [size, setSize] = useState(undefined);
     const [quantity, setQuantity] = useState(1);
 
     return (
@@ -78,7 +81,7 @@ function ProductScreen(props) {
 
             <li>
                 <div className="infor-product-price">
-                    <h2> {product.price}.000Đ </h2>
+                    <h2> {formatCurrency(product.price)} </h2>
                     <h3>  
                         <small>
                             {formatCurrency(product.pricesell)}
@@ -101,7 +104,10 @@ function ProductScreen(props) {
                 <label className="infor-product-color-size">
                     <h2>  Màu Bạn Thích: </h2>
                    
-                    <select className="select-color-size">
+                    <select className="select-color-size"
+                        value={size}
+                        onChange={(e) => setSize(e.target.value)}
+                        >
                         {
                             product.color.map((item, index) => (
                                 <option key={index} value={item}> {item} </option>
@@ -115,7 +121,10 @@ function ProductScreen(props) {
                 <label className="infor-product-color-size">
                     <h2>  Size Bạn Chọn: </h2>
                    
-                    <select className="select-color-size">
+                    <select className="select-color-size"
+                        value={color}
+                        onChange={(e) => setColor(e.target.value)}
+                        >
                         {
                             product.size.map((item, index) => (
                                 <option key={index} value={item}> {item} </option>
@@ -137,6 +146,7 @@ function ProductScreen(props) {
                         {[...Array(product.countInStock).keys()].map((x) => 
                             (<option key={x + 1} value={x + 1}> {x + 1} </option>)
                         )}
+                        {quantity}
                     </select>
                 </div>
 
